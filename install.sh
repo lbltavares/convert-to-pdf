@@ -41,3 +41,15 @@ sudo mv ./$servname.* /etc/systemd/system/.
 sudo systemctl daemon-reload
 sudo systemctl enable --now $servname.path
 
+# Adiciona o target aos favoritos:
+bookmarks=$HOME/.config/gtk-3.0/bookmarks
+if [[ -f $bookmarks ]]; then
+
+	content=$(cat $bookmarks | grep $target)
+
+	if [[ -z $content ]]; then
+		echo "file://$target" >> $bookmarks
+	fi
+
+fi
+
