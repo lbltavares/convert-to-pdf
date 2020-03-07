@@ -41,5 +41,3 @@ sudo mv ./$servname.* /etc/systemd/system/.
 sudo systemctl daemon-reload
 sudo systemctl enable --now $servname.path
 
-systemctl status convert-to-pdf.path
-systemctl status convert-to-pdf.service
